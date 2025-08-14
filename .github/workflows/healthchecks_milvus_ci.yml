@@ -3,7 +3,9 @@ name: HealthChecks Milvus CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.Milvus/**
       - test/HealthChecks.Milvus.Tests/**
@@ -17,7 +19,9 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.Milvus/**
       - test/HealthChecks.Milvus.Tests/**

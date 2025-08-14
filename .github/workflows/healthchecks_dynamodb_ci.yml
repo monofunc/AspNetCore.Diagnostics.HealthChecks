@@ -3,7 +3,9 @@ name: HealthChecks DynamoDb CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.DynamoDb/**
       - test/HealthChecks.DynamoDb.Tests/**
@@ -18,7 +20,9 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.DynamoDb/**
       - test/HealthChecks.DynamoDb.Tests/**

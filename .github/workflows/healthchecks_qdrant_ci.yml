@@ -3,7 +3,9 @@ name: HealthChecks Qdrant CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.Qdrant/**
       - test/HealthChecks.Qdrant.Tests/**
@@ -17,7 +19,9 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.Qdrant/**
       - test/HealthChecks.Qdrant.Tests/**

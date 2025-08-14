@@ -3,7 +3,9 @@ name: HealthChecks ClickHouse DB CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.ClickHouse/**
       - test/HealthChecks.ClickHouse.Tests/**
@@ -17,7 +19,9 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.ClickHouse/**
       - test/HealthChecks.ClickHouse.Tests/**

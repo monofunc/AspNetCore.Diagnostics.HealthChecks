@@ -3,7 +3,9 @@ name: HealthChecks OpenIdConnectServer CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.OpenIdConnectServer/**
       - test/HealthChecks.OpenIdConnectServer.Tests/**
@@ -17,7 +19,9 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.OpenIdConnectServer/**
       - test/HealthChecks.OpenIdConnectServer.Tests/**

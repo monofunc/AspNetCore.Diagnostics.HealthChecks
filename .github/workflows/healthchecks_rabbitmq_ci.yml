@@ -3,7 +3,9 @@ name: HealthChecks RabbitMQ CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.Rabbitmq/**
       - src/HealthChecks.Rabbitmq.v6/**
@@ -19,7 +21,9 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.Rabbitmq/**
       - src/HealthChecks.Rabbitmq.v6/**

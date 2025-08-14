@@ -3,21 +3,25 @@ name: HealthChecks Azure.IoTHub CI
 on:
   workflow_dispatch:
   push:
-   branches: [ master ]
-   paths:
-     - src/HealthChecks.Azure.IoTHub/**
-     - test/HealthChecks.Azure.IoTHub.Tests/**
-     - test/_SHARED/**
-     - .github/workflows/healthchecks_azure_iothub_ci.yml
-     - .github/workflows/reusable_ci_workflow.yml
-     - Directory.Build.props
-     - Directory.Build.targets
-   tags-ignore:
-     - release-*
-     - preview-*
+    branches:
+      - master
+      - next
+    paths:
+      - src/HealthChecks.Azure.IoTHub/**
+      - test/HealthChecks.Azure.IoTHub.Tests/**
+      - test/_SHARED/**
+      - .github/workflows/healthchecks_azure_iothub_ci.yml
+      - .github/workflows/reusable_ci_workflow.yml
+      - Directory.Build.props
+      - Directory.Build.targets
+    tags-ignore:
+      - release-*
+      - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.Azure.IoTHub/**
       - test/HealthChecks.Azure.IoTHub.Tests/**
