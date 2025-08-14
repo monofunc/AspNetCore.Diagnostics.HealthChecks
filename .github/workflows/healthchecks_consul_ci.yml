@@ -3,7 +3,9 @@ name: HealthChecks Consul CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.Consul/**
       - test/HealthChecks.Consul.Tests/**
@@ -17,7 +19,9 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.Consul/**
       - test/HealthChecks.Consul.Tests/**

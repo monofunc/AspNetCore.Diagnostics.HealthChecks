@@ -3,20 +3,24 @@ name: HealthChecks Arango DB CI
 on:
   workflow_dispatch:
   push:
-   branches: [ master ]
-   paths:
-     - src/HealthChecks.ArangoDb/**
-     - test/HealthChecks.ArangoDb.Tests/**
-     - test/_SHARED/**
-     - .github/workflows/healthchecks_arangodb_ci.yml
-     - Directory.Build.props
-     - Directory.Build.targets
-   tags-ignore:
-     - release-*
-     - preview-*
+    branches:
+      - master
+      - next
+    paths:
+      - src/HealthChecks.ArangoDb/**
+      - test/HealthChecks.ArangoDb.Tests/**
+      - test/_SHARED/**
+      - .github/workflows/healthchecks_arangodb_ci.yml
+      - Directory.Build.props
+      - Directory.Build.targets
+    tags-ignore:
+      - release-*
+      - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.ArangoDb/**
       - test/HealthChecks.ArangoDb.Tests/**

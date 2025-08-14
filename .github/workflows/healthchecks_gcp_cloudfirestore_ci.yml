@@ -3,7 +3,9 @@ name: HealthChecks Gcp.CloudFirestore CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.Gcp.CloudFirestore/**
       - test/HealthChecks.Gcp.CloudFirestore.Tests/**
@@ -18,7 +20,9 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.Gcp.CloudFirestore/**
       - test/HealthChecks.Gcp.CloudFirestore.Tests/**

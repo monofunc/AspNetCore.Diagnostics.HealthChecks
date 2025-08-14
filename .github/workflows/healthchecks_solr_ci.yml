@@ -3,7 +3,9 @@ name: HealthChecks Solr CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master, netcore-6.0 ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.Solr/**
       - test/HealthChecks.Solr.Tests/**
@@ -17,7 +19,9 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.Solr/**
       - test/HealthChecks.Solr.Tests/**

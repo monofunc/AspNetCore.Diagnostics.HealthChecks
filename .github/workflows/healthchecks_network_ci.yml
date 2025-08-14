@@ -3,7 +3,9 @@ name: HealthChecks Network CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.Network/**
       - test/HealthChecks.Network.Tests/**
@@ -17,7 +19,9 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.Network/**
       - test/HealthChecks.Network.Tests/**

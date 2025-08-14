@@ -3,7 +3,9 @@ name: HealthChecks RavenDb CI
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.RavenDB/**
       - test/HealthChecks.RavenDb.Tests/**
@@ -17,7 +19,9 @@ on:
       - preview-*
 
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+      - next
     paths:
       - src/HealthChecks.RavenDB/**
       - test/HealthChecks.RavenDb.Tests/**
