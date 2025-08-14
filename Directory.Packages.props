@@ -107,6 +107,7 @@
     <PackageVersion Include="Testcontainers.ArangoDb" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="Testcontainers.ClickHouse" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="Testcontainers.InfluxDb" Version="$(TestcontainersVersion)" />
+    <PackageVersion Include="Testcontainers.Consul" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="Testcontainers.Kafka" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="Testcontainers.Milvus" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="Testcontainers.Oracle" Version="$(TestcontainersVersion)" />
