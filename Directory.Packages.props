@@ -110,6 +110,7 @@
     <PackageVersion Include="Testcontainers.Elasticsearch" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="Testcontainers.Kafka" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="Testcontainers.Milvus" Version="$(TestcontainersVersion)" />
+    <PackageVersion Include="Testcontainers.Nats" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="Testcontainers.Oracle" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="Testcontainers.PostgreSql" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="TestContainers.MongoDb" Version="$(TestcontainersVersion)" />
