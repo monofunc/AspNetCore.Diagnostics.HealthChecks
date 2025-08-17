@@ -109,6 +109,7 @@
     <PackageVersion Include="Testcontainers.Consul" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="Testcontainers.Elasticsearch" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="Testcontainers.EventStoreDb" Version="$(TestcontainersVersion)" />
+    <PackageVersion Include="Testcontainers.K3s" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="Testcontainers.Kafka" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="Testcontainers.Keycloak" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="Testcontainers.Milvus" Version="$(TestcontainersVersion)" />
