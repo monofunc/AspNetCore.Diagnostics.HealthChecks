@@ -112,6 +112,7 @@
     <PackageVersion Include="Testcontainers.K3s" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="Testcontainers.Kafka" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="Testcontainers.Keycloak" Version="$(TestcontainersVersion)" />
+    <PackageVersion Include="Testcontainers.LocalStack" Version="4.1.0" />
     <PackageVersion Include="Testcontainers.Milvus" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="Testcontainers.Nats" Version="$(TestcontainersVersion)" />
     <PackageVersion Include="Testcontainers.Oracle" Version="$(TestcontainersVersion)" />
