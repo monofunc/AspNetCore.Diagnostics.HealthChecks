@@ -1,5 +1,4 @@
 using System.Net;
-using HealthChecks.UI.ServiceDiscovery.Kubernetes;
 using HealthChecks.UI.Data;
 using Microsoft.EntityFrameworkCore;
 

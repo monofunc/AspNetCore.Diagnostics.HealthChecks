@@ -1,4 +1,3 @@
-using HealthChecks.UI.ServiceDiscovery.Kubernetes;
 using k8s.Models;
 
 namespace HealthChecks.UI.ServiceDiscovery.Kubernetes.Tests.Helpers;

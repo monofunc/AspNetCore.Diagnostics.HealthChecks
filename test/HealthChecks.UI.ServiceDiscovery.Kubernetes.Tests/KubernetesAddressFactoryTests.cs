@@ -1,5 +1,4 @@
 using System.Text.Json;
-using HealthChecks.UI.ServiceDiscovery.Kubernetes;
 using HealthChecks.UI.ServiceDiscovery.Kubernetes.Tests.Helpers;
 using k8s.Models;
 

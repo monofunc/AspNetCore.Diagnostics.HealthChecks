@@ -2,7 +2,6 @@ using System.Net;
 using HealthChecks.UI.Configuration;
 using HealthChecks.UI.Core;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
 
 namespace HealthChecks.UI.Tests;
 

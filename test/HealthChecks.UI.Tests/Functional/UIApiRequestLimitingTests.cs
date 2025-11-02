@@ -1,7 +1,6 @@
 using System.Net;
 using HealthChecks.UI.Client;
 using HealthChecks.UI.Configuration;
-using Microsoft.Extensions.Logging;
 
 namespace HealthChecks.UI.Tests;
 
