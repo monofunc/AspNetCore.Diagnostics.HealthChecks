@@ -1,0 +1,33 @@
+namespace HealthChecks.UI.ServiceDiscovery.Kubernetes
+{
+    public static class KubernetesDiscoveryConstants
+    {
+        public const string HEALTHCHECKS_DEFAULT_DISCOVERY_LABEL = "HealthChecks";
+        public const string HEALTHCHECKS_DEFAULT_DISCOVERY_PATH_ANNOTATION = "HealthChecksPath";
+        public const string HEALTHCHECKS_DEFAULT_DISCOVERY_PORT_ANNOTATION = "HealthChecksPort";
+        public const string HEALTHCHECKS_DEFAULT_DISCOVERY_SCHEME_ANNOTATION = "HealthChecksScheme";
+        public const string HEALTHCHECKS_DEFAULT_PATH = "hc";
+        public const string K8S_CLUSTER_SERVICE_HTTP_CLIENT_NAME = "k8s-cluster-service";
+    }
+    public class KubernetesDiscoverySettings
+    {
+        public KubernetesDiscoverySettings() { }
+        public string? ClusterHost { get; set; }
+        public bool Enabled { get; set; }
+        public string HealthPath { get; set; }
+        public System.Collections.Generic.List<string> Namespaces { get; set; }
+        public int RefreshTimeInSeconds { get; set; }
+        public string ServicesLabel { get; set; }
+        public string ServicesPathAnnotation { get; set; }
+        public string ServicesPortAnnotation { get; set; }
+        public string ServicesSchemeAnnotation { get; set; }
+        public string? Token { get; set; }
+    }
+}
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class KubernetesServiceDiscoveryExtensions
+    {
+        public static Microsoft.Extensions.DependencyInjection.HealthChecksUIBuilder AddKubernetesServiceDiscovery(this Microsoft.Extensions.DependencyInjection.HealthChecksUIBuilder builder, Microsoft.Extensions.Configuration.IConfiguration configuration) { }
+    }
+}

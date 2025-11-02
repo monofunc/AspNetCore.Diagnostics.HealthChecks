@@ -1,4 +1,4 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -322,6 +322,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecks.ClickHouse", "src\HealthChecks.ClickHouse\HealthChecks.ClickHouse.csproj", "{96E2B0A3-02BD-456B-8888-4D96DABA99EB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecks.ClickHouse.Tests", "test\HealthChecks.ClickHouse.Tests\HealthChecks.ClickHouse.Tests.csproj", "{2FB5CB9F-F870-48DE-BD1D-306AE86A67CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecks.UI.ServiceDiscovery.Kubernetes", "src\HealthChecks.UI.ServiceDiscovery.Kubernetes\HealthChecks.UI.ServiceDiscovery.Kubernetes.csproj", "{720B8C46-344C-4366-AAD7-D0B0D50976BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthChecks.UI.ServiceDiscovery.Kubernetes.Tests", "test\HealthChecks.UI.ServiceDiscovery.Kubernetes.Tests\HealthChecks.UI.ServiceDiscovery.Kubernetes.Tests.csproj", "{63DD4C60-F573-4295-A420-EAD99E9F89A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -905,6 +909,14 @@ Global
 		{2FB5CB9F-F870-48DE-BD1D-306AE86A67CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FB5CB9F-F870-48DE-BD1D-306AE86A67CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FB5CB9F-F870-48DE-BD1D-306AE86A67CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{720B8C46-344C-4366-AAD7-D0B0D50976BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{720B8C46-344C-4366-AAD7-D0B0D50976BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{720B8C46-344C-4366-AAD7-D0B0D50976BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{720B8C46-344C-4366-AAD7-D0B0D50976BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63DD4C60-F573-4295-A420-EAD99E9F89A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63DD4C60-F573-4295-A420-EAD99E9F89A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63DD4C60-F573-4295-A420-EAD99E9F89A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63DD4C60-F573-4295-A420-EAD99E9F89A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1054,6 +1066,8 @@ Global
 		{44BB97EE-88DB-4C9B-8195-2C6D889AE391} = {FF4414C2-8863-4ADA-8A1D-4B9F25C361FE}
 		{96E2B0A3-02BD-456B-8888-4D96DABA99EB} = {2A3FD988-2BB8-43CF-B3A2-B70E648259D4}
 		{2FB5CB9F-F870-48DE-BD1D-306AE86A67CA} = {FF4414C2-8863-4ADA-8A1D-4B9F25C361FE}
+		{720B8C46-344C-4366-AAD7-D0B0D50976BF} = {2A3FD988-2BB8-43CF-B3A2-B70E648259D4}
+		{63DD4C60-F573-4295-A420-EAD99E9F89A5} = {FF4414C2-8863-4ADA-8A1D-4B9F25C361FE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2B8C62A1-11B6-469F-874C-A02443256568}

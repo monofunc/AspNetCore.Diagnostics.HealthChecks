@@ -63,7 +63,9 @@ jobs:
           dotnet restore ./src/HealthChecks.UI.PostgreSQL.Storage/HealthChecks.UI.PostgreSQL.Storage.csproj &&
           dotnet restore ./src/HealthChecks.UI.SQLite.Storage/HealthChecks.UI.SQLite.Storage.csproj &&
           dotnet restore ./src/HealthChecks.UI.SqlServer.Storage/HealthChecks.UI.SqlServer.Storage.csproj &&
-          dotnet restore ./src/HealthChecks.UI.K8s.Operator/HealthChecks.UI.K8s.Operator.csproj
+          dotnet restore ./src/HealthChecks.UI.K8s.Operator/HealthChecks.UI.K8s.Operator.csproj &&
+          dotnet restore ./src/HealthChecks.UI.ServiceDiscovery.Kubernetes/HealthChecks.UI.ServiceDiscovery.Kubernetes.csproj &&
+          dotnet restore ./test/HealthChecks.UI.ServiceDiscovery.Kubernetes.Tests/HealthChecks.UI.ServiceDiscovery.Kubernetes.Tests.csproj
 
       - name: Check formatting
         run: |
@@ -80,7 +82,9 @@ jobs:
           dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.UI.PostgreSQL.Storage/HealthChecks.UI.PostgreSQL.Storage.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
           dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.UI.SQLite.Storage/HealthChecks.UI.SQLite.Storage.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
           dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.UI.SqlServer.Storage/HealthChecks.UI.SqlServer.Storage.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
-          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.UI.K8s.Operator/HealthChecks.UI.K8s.Operator.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.UI.K8s.Operator/HealthChecks.UI.K8s.Operator.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./src/HealthChecks.UI.ServiceDiscovery.Kubernetes/HealthChecks.UI.ServiceDiscovery.Kubernetes.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1) &&
+          dotnet format --no-restore --verify-no-changes --severity warn ./test/HealthChecks.UI.ServiceDiscovery.Kubernetes.Tests/HealthChecks.UI.ServiceDiscovery.Kubernetes.Tests.csproj || (echo "Run 'dotnet format' to fix issues" && exit 1)
 
       - name: Build
         run: |
@@ -97,7 +101,9 @@ jobs:
           dotnet build --no-restore ./src/HealthChecks.UI.PostgreSQL.Storage/HealthChecks.UI.PostgreSQL.Storage.csproj &&
           dotnet build --no-restore ./src/HealthChecks.UI.SQLite.Storage/HealthChecks.UI.SQLite.Storage.csproj &&
           dotnet build --no-restore ./src/HealthChecks.UI.SqlServer.Storage/HealthChecks.UI.SqlServer.Storage.csproj &&
-          dotnet build --no-restore ./src/HealthChecks.UI.K8s.Operator/HealthChecks.UI.K8s.Operator.csproj
+          dotnet build --no-restore ./src/HealthChecks.UI.K8s.Operator/HealthChecks.UI.K8s.Operator.csproj &&
+          dotnet build --no-restore ./src/HealthChecks.UI.ServiceDiscovery.Kubernetes/HealthChecks.UI.ServiceDiscovery.Kubernetes.csproj &&
+          dotnet build --no-restore ./test/HealthChecks.UI.ServiceDiscovery.Kubernetes.Tests/HealthChecks.UI.ServiceDiscovery.Kubernetes.Tests.csproj
 
       - name: Test
         run: >
@@ -127,6 +133,14 @@ jobs:
           DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
           dotnet test
           ./test/HealthChecks.UI.Data.Tests/HealthChecks.UI.Data.Tests.csproj
+          --no-restore
+          --no-build
+          --collect "XPlat Code Coverage"
+          --results-directory .coverage
+          --
+          DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover &&
+          dotnet test
+          ./test/HealthChecks.UI.ServiceDiscovery.Kubernetes.Tests/HealthChecks.UI.ServiceDiscovery.Kubernetes.Tests.csproj
           --no-restore
           --no-build
           --collect "XPlat Code Coverage"

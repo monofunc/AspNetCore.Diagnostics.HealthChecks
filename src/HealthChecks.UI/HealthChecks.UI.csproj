@@ -24,7 +24,6 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" />
     <PackageReference Include="Microsoft.Extensions.Http" />
-    <PackageReference Include="KubernetesClient" />
   </ItemGroup>
 
   <ItemGroup>

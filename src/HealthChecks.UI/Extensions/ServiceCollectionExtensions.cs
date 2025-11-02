@@ -1,7 +1,6 @@
 using HealthChecks.UI;
 using HealthChecks.UI.Configuration;
 using HealthChecks.UI.Core;
-using HealthChecks.UI.Core.Discovery.K8S;
 using HealthChecks.UI.Core.HostedService;
 using HealthChecks.UI.Core.Notifications;
 using Microsoft.Extensions.Configuration;
@@ -23,10 +22,6 @@ public static class ServiceCollectionExtensions
                 setupSettings?.Invoke(settings);
             });
 
-        services
-            .AddOptions<KubernetesDiscoverySettings>()
-            .Configure<IConfiguration>((settings, configuration) => configuration.Bind(Keys.HEALTHCHECKSUI_KUBERNETES_DISCOVERY_SETTING_KEY, settings));
-
         services.TryAddSingleton<ServerAddressesService>();
         services.TryAddScoped<IHealthCheckFailureNotifier, WebHookFailureNotifier>();
         services.TryAddScoped<IHealthCheckReportCollector, HealthCheckReportCollector>();
@@ -34,7 +29,6 @@ public static class ServiceCollectionExtensions
         services
             .AddHostedService<UIInitializationHostedService>()
             .AddHostedService<HealthCheckCollectorHostedService>()
-            .AddKubernetesDiscoveryService()
             .AddApiEndpointHttpClient()
             .AddWebhooksEndpointHttpClient();
 
@@ -87,14 +81,5 @@ public static class ServiceCollectionExtensions
             }
         })
         .Services;
-    }
-
-    private static IServiceCollection AddKubernetesDiscoveryService(this IServiceCollection services)
-    {
-        services
-            .AddHostedService<KubernetesDiscoveryHostedService>()
-            .AddHttpClient(Keys.K8S_CLUSTER_SERVICE_HTTP_CLIENT_NAME);
-
-        return services;
     }
 }

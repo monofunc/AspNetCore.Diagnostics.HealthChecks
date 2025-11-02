@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <PackageTags>$(PackageTags);Kubernetes;K8s;Discovery;ServiceDiscovery</PackageTags>
+    <Description>Kubernetes service discovery for ASP.NET Core Health Checks UI. Automatically discovers and registers health check endpoints from Kubernetes services.</Description>
+    <VersionPrefix>$(HealthCheckUIServiceDiscoveryKubernetes)</VersionPrefix>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="KubernetesClient" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+    <PackageReference Include="Microsoft.Extensions.Http" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HealthChecks.UI.Data\HealthChecks.UI.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="README.md" />
+  </ItemGroup>
+
+</Project>

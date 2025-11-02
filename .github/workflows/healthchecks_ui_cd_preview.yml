@@ -38,6 +38,8 @@ jobs:
         run: dotnet restore ./src/HealthChecks.UI.SQLite.Storage/HealthChecks.UI.SQLite.Storage.csproj
       - name: Restore UI.SqlServer.Storage
         run: dotnet restore ./src/HealthChecks.UI.SqlServer.Storage/HealthChecks.UI.SqlServer.Storage.csproj
+      - name: Restore UI.ServiceDiscovery.Kubernetes
+        run: dotnet restore ./src/HealthChecks.UI.ServiceDiscovery.Kubernetes/HealthChecks.UI.ServiceDiscovery.Kubernetes.csproj
       #- name: Restore UI.K8s.Operator
       #  run: dotnet restore ./src/HealthChecks.UI.K8s.Operator/HealthChecks.UI.K8s.Operator.csproj
       - name: Build UI
@@ -58,6 +60,8 @@ jobs:
         run: dotnet build --no-restore ./src/HealthChecks.UI.SQLite.Storage/HealthChecks.UI.SQLite.Storage.csproj -c $BUILD_CONFIG
       - name: Build UI.SqlServer.Storage
         run: dotnet build --no-restore ./src/HealthChecks.UI.SqlServer.Storage/HealthChecks.UI.SqlServer.Storage.csproj -c $BUILD_CONFIG
+      - name: Build UI.ServiceDiscovery.Kubernetes
+        run: dotnet build --no-restore ./src/HealthChecks.UI.ServiceDiscovery.Kubernetes/HealthChecks.UI.ServiceDiscovery.Kubernetes.csproj -c $BUILD_CONFIG
       #- name: Build UI.K8s.Operator
       #  run: dotnet build --no-restore ./src/HealthChecks.UI.K8s.Operator/HealthChecks.UI.K8s.Operator.csproj -c $BUILD_CONFIG
       - name: Pack UI
@@ -78,6 +82,8 @@ jobs:
         run: dotnet pack --no-build ./src/HealthChecks.UI.SQLite.Storage/HealthChecks.UI.SQLite.Storage.csproj --version-suffix $VERSION_SUFFIX -c $BUILD_CONFIG -o ./artifacts
       - name: Pack UI.SqlServer.Storage
         run: dotnet pack --no-build ./src/HealthChecks.UI.SqlServer.Storage/HealthChecks.UI.SqlServer.Storage.csproj --version-suffix $VERSION_SUFFIX -c $BUILD_CONFIG -o ./artifacts
+      - name: Pack UI.ServiceDiscovery.Kubernetes
+        run: dotnet pack --no-build ./src/HealthChecks.UI.ServiceDiscovery.Kubernetes/HealthChecks.UI.ServiceDiscovery.Kubernetes.csproj --version-suffix $VERSION_SUFFIX -c $BUILD_CONFIG -o ./artifacts
       #- name: Pack UI.K8s.Operator
       #  run: dotnet pack --no-build ./src/HealthChecks.UI.K8s.Operator/HealthChecks.UI.K8s.Operator.csproj --version-suffix $VERSION_SUFFIX -c $BUILD_CONFIG -o ./artifacts
       - name: Publish UI Health Check
@@ -98,5 +104,7 @@ jobs:
         run: dotnet nuget push ./artifacts/AspNetCore.HealthChecks.UI.SQLite.Storage.*.nupkg -k ${{secrets.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json --skip-duplicate
       - name: Publish UI.SqlServer.Storage Health Check
         run: dotnet nuget push ./artifacts/AspNetCore.HealthChecks.UI.SqlServer.Storage.*.nupkg -k ${{secrets.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json --skip-duplicate
+      - name: Publish UI.ServiceDiscovery.Kubernetes Health Check
+        run: dotnet nuget push ./artifacts/AspNetCore.HealthChecks.UI.ServiceDiscovery.Kubernetes.*.nupkg -k ${{secrets.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json --skip-duplicate
       #- name: Publish UI.K8s.Operator Health Check nuget
       #  run: dotnet nuget push ./artifacts/AspNetCore.HealthChecks.UI.K8s.Operator.*.nupkg -k ${{secrets.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json --skip-duplicate
